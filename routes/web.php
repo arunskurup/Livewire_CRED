@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/Home',\App\Http\Livewire\UserList::class)->name('Home');
+Route::get('/Create',\App\Http\Livewire\UserCreate::class)->name('create');
 Auth::routes();
+Route::get('/home',\App\Http\Livewire\UserList::class)->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
